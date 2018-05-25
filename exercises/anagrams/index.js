@@ -9,23 +9,23 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-  const convertString = string => {
-    return string
-      .replace(/( )/g, '')
-      .toLowerCase()
-      .split('');
-  };
-
-  const stringAChars = convertString(stringA);
-  const stringBChars = convertString(stringB);
+  const stringAChars = convertString(stringA)
+  const stringBChars = convertString(stringB)
 
   return (
     stringAChars.length == stringBChars.length &&
     stringAChars.sort().join('') === stringBChars.sort().join('')
-  );
+  )
 }
 
-module.exports = anagrams;
+const convertString = string => {
+  return string
+    .replace(/( )/g, '')
+    .toLowerCase()
+    .split('')
+}
+
+module.exports = anagrams
 
 // const fn = s =>
 //   [...s].reduce((acc, char) => {
